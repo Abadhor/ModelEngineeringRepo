@@ -1,54 +1,143 @@
 <?xml version="1.0" encoding="ASCII"?>
-<forms:EFML xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:forms="http://www.example.org/forms">
-  <entities name="Publication">
-    <attributes name="title"/>
-    <attributes name="keywords"/>
-    <attributes name="abstract" type="Text"/>
-    <attributes name="doi"/>
-    <attributes name="year" type="Year"/>
-    <attributes name="fromPage" type="Integer"/>
-    <attributes name="untilPage" type="Integer"/>
-    <attributes name="type" type="None"/>
-    <attributes name="assignedFaculty" type="None"/>
-    <attributes name="field" type="None"/>
-    <relationships name="authors" lowerBound="1" opposite="//@entities.1/@relationships.0" target="//@entities.1"/>
-    <relationships name="proceedings" upperBound="1" target="//@entities.2"/>
-    <relationships name="journal" upperBound="1" target="//@entities.4"/>
-    <relationships name="book" upperBound="1" target="//@entities.5"/>
+<forms:EFML
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:forms="http://www.example.org/forms">
+  <entities
+      name="Publication"
+      id="//@entities.6/@attributes.0">
+    <attributes
+        name="title"/>
+    <attributes
+        name="keywords"/>
+    <attributes
+        name="abstract"
+        type="Text"/>
+    <attributes
+        name="doi"/>
+    <attributes
+        name="year"
+        type="Year"/>
+    <attributes
+        name="fromPage"
+        type="Integer"/>
+    <attributes
+        name="untilPage"
+        type="Integer"/>
+    <attributes
+        name="type"
+        type="None"/>
+    <attributes
+        name="assignedFaculty"
+        type="None"/>
+    <attributes
+        name="field"
+        type="None"/>
+    <relationships
+        name="authors"
+        lowerBound="1"
+        opposite="//@entities.1/@relationships.0"
+        target="//@entities.1"/>
+    <relationships
+        name="proceedings"
+        upperBound="1"
+        target="//@entities.2"/>
+    <relationships
+        name="journal"
+        upperBound="1"
+        target="//@entities.4"/>
+    <relationships
+        name="book"
+        upperBound="1"
+        target="//@entities.5"/>
   </entities>
-  <entities name="Person">
-    <attributes name="firstname"/>
-    <attributes name="lastname"/>
-    <attributes name="email" type="Email"/>
-    <attributes name="external" type="Boolean"/>
-    <attributes name="faculty" type="None"/>
-    <relationships name="publications" opposite="//@entities.0/@relationships.0" target="//@entities.0"/>
+  <entities
+      name="Person"
+      id="//@entities.1/@attributes.2">
+    <attributes
+        name="firstname"/>
+    <attributes
+        name="lastname"/>
+    <attributes
+        name="email"
+        type="Email"/>
+    <attributes
+        name="external"
+        type="Boolean"/>
+    <attributes
+        name="faculty"
+        type="None"/>
+    <relationships
+        name="publications"
+        opposite="//@entities.0/@relationships.0"
+        target="//@entities.0"/>
   </entities>
-  <entities name="Proceedings" superType="//@entities.6">
-    <attributes name="publisher"/>
-    <attributes name="volume" type="Integer"/>
-    <attributes name="isbn"/>
-    <relationships name="editors" target="//@entities.1"/>
-    <relationships name="event" lowerBound="1" upperBound="1" target="//@entities.3"/>
+  <entities
+      name="Proceedings"
+      id="//@entities.3/@attributes.0"
+      superType="//@entities.6">
+    <attributes
+        name="publisher"/>
+    <attributes
+        name="volume"
+        type="Integer"/>
+    <attributes
+        name="isbn"/>
+    <relationships
+        name="editors"
+        target="//@entities.1"/>
+    <relationships
+        name="event"
+        lowerBound="1"
+        upperBound="1"
+        target="//@entities.3"/>
   </entities>
-  <entities name="Event">
-    <attributes name="title"/>
-    <attributes name="city"/>
-    <attributes name="country"/>
-    <attributes name="fromDate" type="Date"/>
-    <attributes name="untilDate" type="Date"/>
-    <attributes name="startTime" type="Time"/>
-    <attributes name="endTime" type="Time"/>
+  <entities
+      name="Event"
+      id="//@entities.3/@attributes.0">
+    <attributes
+        name="title"/>
+    <attributes
+        name="city"/>
+    <attributes
+        name="country"/>
+    <attributes
+        name="fromDate"
+        type="Date"/>
+    <attributes
+        name="untilDate"
+        type="Date"/>
+    <attributes
+        name="startTime"
+        type="Time"/>
+    <attributes
+        name="endTime"
+        type="Time"/>
   </entities>
-  <entities name="Journal" superType="//@entities.6">
-    <attributes name="volume" type="Integer"/>
-    <attributes name="number" type="Integer"/>
+  <entities
+      name="Journal"
+      id="//@entities.3/@attributes.0"
+      superType="//@entities.6">
+    <attributes
+        name="volume"
+        type="Integer"/>
+    <attributes
+        name="number"
+        type="Integer"/>
   </entities>
-  <entities name="Book" superType="//@entities.6">
-    <attributes name="publisher"/>
-    <attributes name="isbn"/>
+  <entities
+      name="Book"
+      id="//@entities.3/@attributes.0"
+      superType="//@entities.6">
+    <attributes
+        name="publisher"/>
+    <attributes
+        name="isbn"/>
   </entities>
-  <entities name="PublicationVenue">
-    <attributes name="title"/>
+  <entities
+      name="PublicationVenue"
+      id="//@entities.3/@attributes.0">
+    <attributes
+        name="title"/>
   </entities>
 </forms:EFML>

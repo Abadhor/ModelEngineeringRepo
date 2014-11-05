@@ -4,6 +4,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="EFML">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
         upperBound="-1" eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerations" lowerBound="1"
+        upperBound="-1" eType="#//Enumeration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -15,7 +17,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AttributeType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationType" eType="#//Enumeration"/>
