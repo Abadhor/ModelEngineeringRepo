@@ -3,6 +3,7 @@
   <models xmi:type="ecore:EPackage" href="forms.ecore#/"/>
   <models xmi:type="genmodel:GenModel" href="forms.genmodel#/"/>
   <models xmi:type="forms:EFML" href="exampleModel2.xmi#/"/>
+  <models xmi:type="forms:EFML" href="exampleModel.xmi#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_tSKIoGNqEeSoi4S0fpJ1cg" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_tYKC8GNqEeSoi4S0fpJ1cg" name="forms class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_tYrnYGNqEeSoi4S0fpJ1cg" source="GMF_DIAGRAMS">
@@ -2259,5 +2260,4 @@
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>
-  <models xmi:type="forms:Entity" href="exampleModel.xmi#/"/>
 </viewpoint:DAnalysis>

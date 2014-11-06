@@ -1,26 +1,219 @@
 <?xml version="1.0" encoding="ASCII"?>
-<forms:EFML xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:forms="http://www.example.org/forms" xsi:schemaLocation="http://www.example.org/forms forms.ecore">
-  <enumerations name="PublicationType">
-    <literals name="JA" value="Journal Article"/>
-    <literals name="BC" value="Book Chapter"/>
-    <literals name="CP" value="Conference Paper"/>
-    <literals name="WP" value="Workshop Paper"/>
+<forms:EFML
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:forms="http://www.example.org/forms"
+    xsi:schemaLocation="http://www.example.org/forms forms.ecore">
+  <entities
+      name="Publication"
+      id="title">
+    <attributes
+        name="title"
+        mandatory="true"/>
+    <attributes
+        name="keywords"/>
+    <attributes
+        name="abstract"
+        type="Text"/>
+    <attributes
+        name="doi"/>
+    <attributes
+        name="year"
+        type="Year"/>
+    <attributes
+        name="fromPage"
+        type="Integer"/>
+    <attributes
+        name="untilPage"
+        type="Integer"/>
+    <attributes
+        name="type"
+        mandatory="true"
+        type="None"
+        enumerationType="//@enumerations.0"/>
+    <attributes
+        name="assignedFaculty"
+        mandatory="true"
+        type="None"
+        enumerationType="//@enumerations.2"/>
+    <attributes
+        name="field"
+        mandatory="true"
+        type="None"
+        enumerationType="//@enumerations.1"/>
+    <relationships
+        name="authors"
+        lowerBound="1"
+        opposite="//@entities.1/@relationships.0"
+        target="//@entities.1"/>
+    <relationships
+        name="proceedings"
+        upperBound="1"
+        target="//@entities.2"/>
+    <relationships
+        name="journal"
+        upperBound="1"
+        target="//@entities.3"/>
+    <relationships
+        name="book"
+        upperBound="1"
+        target="//@entities.4"/>
+  </entities>
+  <entities
+      name="Person"
+      id="email">
+    <attributes
+        name="firstname"/>
+    <attributes
+        name="lastname"
+        mandatory="true"/>
+    <attributes
+        name="email"
+        mandatory="true"
+        type="Email"/>
+    <attributes
+        name="external"
+        mandatory="true"
+        type="Boolean"/>
+    <attributes
+        name="faculty"
+        type="None"
+        enumerationType="//@enumerations.2"/>
+    <relationships
+        name="publications"
+        opposite="//@entities.0/@relationships.0"
+        target="//@entities.0"/>
+  </entities>
+  <entities
+      name="Proceedings"
+      superType="//@entities.6">
+    <attributes
+        name="publisher"
+        mandatory="true"/>
+    <attributes
+        name="volume"
+        type="Integer"/>
+    <attributes
+        name="isbn"/>
+    <relationships
+        name="editors"
+        target="//@entities.1"/>
+    <relationships
+        name="event"
+        lowerBound="1"
+        upperBound="1"
+        target="//@entities.5"/>
+  </entities>
+  <entities
+      name="Journal"
+      superType="//@entities.6">
+    <attributes
+        name="volume"
+        mandatory="true"
+        type="Integer"/>
+    <attributes
+        name="number"
+        mandatory="true"
+        type="Integer"/>
+  </entities>
+  <entities
+      name="Book"
+      superType="//@entities.6">
+    <attributes
+        name="publisher"
+        mandatory="true"/>
+    <attributes
+        name="isbn"/>
+  </entities>
+  <entities
+      name="Event"
+      id="title">
+    <attributes
+        name="title"
+        mandatory="true"/>
+    <attributes
+        name="city"/>
+    <attributes
+        name="country"/>
+    <attributes
+        name="fromDate"
+        type="Date"/>
+    <attributes
+        name="untilDate"
+        type="Date"/>
+    <attributes
+        name="startTime"
+        type="Time"/>
+    <attributes
+        name="endTime"
+        type="Time"/>
+  </entities>
+  <entities
+      name="PublicationVenue"
+      id="title">
+    <attributes
+        name="title"
+        mandatory="true"/>
+  </entities>
+  <enumerations
+      name="PublicationType">
+    <literals
+        name="JA"
+        value="Journal Article"/>
+    <literals
+        name="BC"
+        value="Book Chapter"/>
+    <literals
+        name="CP"
+        value="Conference Paper"/>
+    <literals
+        name="WP"
+        value="Workshop Paper"/>
   </enumerations>
-  <enumerations name="ResearchField">
-    <literals name="CSE" value="Computational Science Engineering"/>
-    <literals name="QPOT" value="Quantum Physics and Quantum Technologies"/>
-    <literals name="MM" value="Materials and Matter"/>
-    <literals name="ICT" value="Information and Communication Technology"/>
-    <literals name="EE" value="Energy and Environment"/>
+  <enumerations
+      name="ResearchField">
+    <literals
+        name="CSE"
+        value="Computational Science Engineering"/>
+    <literals
+        name="QPOT"
+        value="Quantum Physics and Quantum Technologies"/>
+    <literals
+        name="MM"
+        value="Materials and Matter"/>
+    <literals
+        name="ICT"
+        value="Information and Communication Technology"/>
+    <literals
+        name="EE"
+        value="Energy and Environment"/>
   </enumerations>
-  <enumerations name="Faculty">
-    <literals name="AP" value="Faculty of Architecture and Planning"/>
-    <literals name="CE" value="Faculty of Civil Engineering"/>
-    <literals name="MIE" value="Faculty of Mechanical and Industrial Engineering"/>
-    <literals name="EEIT" value="Faculty of Electrical Engineering and Information Technology"/>
-    <literals name="MG" value="Faculty of Mathematics and Geoinformation"/>
-    <literals name="P" value="Faculty of Physics"/>
-    <literals name="TC" value="Faculty of Technical Chemistry"/>
-    <literals name="I" value="Faculty of Informatics"/>
+  <enumerations
+      name="Faculty">
+    <literals
+        name="AP"
+        value="Faculty of Architecture and Planning"/>
+    <literals
+        name="CE"
+        value="Faculty of Civil Engineering"/>
+    <literals
+        name="MIE"
+        value="Faculty of Mechanical and Industrial Engineering"/>
+    <literals
+        name="EEIT"
+        value="Faculty of Electrical Engineering and Information Technology"/>
+    <literals
+        name="MG"
+        value="Faculty of Mathematics and Geoinformation"/>
+    <literals
+        name="P"
+        value="Faculty of Physics"/>
+    <literals
+        name="TC"
+        value="Faculty of Technical Chemistry"/>
+    <literals
+        name="I"
+        value="Faculty of Informatics"/>
   </enumerations>
 </forms:EFML>
