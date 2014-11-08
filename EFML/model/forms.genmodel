@@ -26,6 +26,10 @@
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//Operators/AND"/>
       <genEnumLiterals ecoreEnumLiteral="forms.ecore#//Operators/OR"/>
     </genEnums>
+    <genClasses ecoreClass="forms.ecore#//EFML">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//EFML/entities"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//EFML/forms"/>
+    </genClasses>
     <genClasses ecoreClass="forms.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Entity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference forms.ecore#//Entity/attributes"/>
@@ -49,8 +53,8 @@
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Relationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Relationship/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//Relationship/lowerBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//Relationship/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Relationship/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Relationship/upperBound"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Relationship/opposite"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Relationship/target"/>
     </genClasses>
