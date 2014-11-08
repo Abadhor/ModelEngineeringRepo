@@ -37,3 +37,6 @@ Icon
 /FSA
 At.ac.tuwien.big.classdiagram
 /.metadata
+/EFML/bin
+/EFML/src
+EFML/build.properties
