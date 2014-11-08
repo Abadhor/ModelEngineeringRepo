@@ -49,8 +49,8 @@
     </genClasses>
     <genClasses ecoreClass="forms.ecore#//Relationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Relationship/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Relationship/lowerBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute forms.ecore#//Relationship/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//Relationship/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference forms.ecore#//Relationship/upperBound"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Relationship/opposite"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference forms.ecore#//Relationship/target"/>
     </genClasses>
