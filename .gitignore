@@ -40,3 +40,5 @@ At.ac.tuwien.big.classdiagram
 /EFML/bin
 /EFML/src
 EFML/build.properties
+EFML/model/exampleModel2.xmi
+EFML/model/forms.genmodel
